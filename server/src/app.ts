@@ -18,7 +18,7 @@ async function initializeDatabase(): Promise<void> {
     }
 }
 
-initializeDatabase();
+//initializeDatabase();
 
 const app = express();
 

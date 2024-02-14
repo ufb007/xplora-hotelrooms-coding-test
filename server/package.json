@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "migrate": "ts-node ../node_modules/sequelize-cli/lib/sequelize db:migrate"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "mysql2": "^3.9.1",
     "reflect-metadata": "^0.2.1",
     "sequelize": "^6.37.0",
+    "sequelize-cli": "^6.6.2",
     "sequelize-typescript": "^2.1.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
@@ -31,7 +33,6 @@
     "@types/node": "^20.11.17",
     "@types/sequelize": "^4.28.20",
     "@types/uuid": "^9.0.8",
-    "nodemon": "^3.0.3",
-    "sequelize-cli": "^6.6.2"
+    "nodemon": "^3.0.3"
   }
 }
