@@ -1,5 +1,6 @@
 import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
 import Room from './Room.model';
+import Booking from './Booking.model';
 
 @Table({ tableName: 'hotels', timestamps: false })
 class Hotel extends Model {
@@ -10,7 +11,10 @@ class Hotel extends Model {
     location!: string;
 
     @HasMany(() => Room)
-    rooms!: Room[]
+    rooms!: Room[];
+
+    @HasMany(() => Booking)
+    booking!: Booking[];
 }
 
 export default Hotel;

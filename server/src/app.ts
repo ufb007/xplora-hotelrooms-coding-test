@@ -3,14 +3,12 @@ import { Sequelize } from 'sequelize-typescript';
 import User from './models/User.model';
 import Hotel from './models/Hotel.model';
 import Room from './models/Room.model';
+import Image from './models/Image.model';
+import Booking from './models/Booking.model';
 
-const sequelize = new Sequelize({
-    database: 'hotelrooms',
-    dialect: 'mysql',
-    username: 'xplora',
-    password: 'xplora',
-    models: [User, Hotel, Room]
-});
+const sequelize = new Sequelize('mysql://xplora:xplora@localhost:3306/hotelrooms');
+
+sequelize.addModels([User, Hotel, Room, Image, Booking]);
 
 async function initializeDatabase(): Promise<void> {
     try {
