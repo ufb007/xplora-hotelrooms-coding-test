@@ -5,19 +5,5 @@
     "database": "hotelrooms",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
-  "test": {
-    "username": "xplora",
-    "password": "xplora",
-    "database": "hotelrooms",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "xplora",
-    "password": "xplora",
-    "database": "hotelrooms",
-    "host": "localhost",
-    "dialect": "mysql"
   }
 }
