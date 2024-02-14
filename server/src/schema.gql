@@ -25,6 +25,7 @@ type Room {
     doubleBed: Int!
     wifi: Int!
     tv: Int!
+    bookings: [Booking]
 }
 
 type Image {
@@ -33,6 +34,7 @@ type Image {
 
 type Booking {
     user: User!
+    userId: Int!
     startDate: DateTime!
     endDate: DateTime!
     room: Room! 

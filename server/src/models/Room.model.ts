@@ -28,7 +28,7 @@ class Room extends Model {
     images!: Image[];
 
     @HasMany(() => Booking)
-    booking!: Booking[];
+    bookings!: Booking[];
 }
 
 export default Room;
