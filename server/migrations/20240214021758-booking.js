@@ -10,6 +10,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        key: true,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
       hotelId: {
         type: Sequelize.INTEGER,
         allowNull: false,

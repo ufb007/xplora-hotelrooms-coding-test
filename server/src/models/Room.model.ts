@@ -10,10 +10,10 @@ class Room extends Model {
     hotelId!: number;
 
     @Column({ type: DataType.INTEGER, defaultValue: 0 })
-    singleBeds!: number;
+    singleBed!: number;
 
     @Column({ type: DataType.INTEGER, defaultValue: 0 })
-    doubleBeds!: number;
+    doubleBed!: number;
 
     @Column({ type: DataType.ENUM, values: ['0','1'], defaultValue: '0' })
     wifi!: number;
@@ -25,7 +25,7 @@ class Room extends Model {
     hotel!: Hotel;
 
     @HasMany(() => Image)
-    image!: Image[];
+    images!: Image[];
 
     @HasMany(() => Booking)
     booking!: Booking[];

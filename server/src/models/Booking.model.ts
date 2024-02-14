@@ -1,9 +1,14 @@
 import { Table, Column, Model, DataType, HasMany, ForeignKey } from 'sequelize-typescript';
 import Hotel from './Hotel.model';
 import Room from './Room.model';
+import User from './User.model';
 
 @Table({ tableName: 'bookings' })
 class Booking extends Model {
+    @ForeignKey(() => User)
+    @Column({ type: DataType.INTEGER })
+    userId!: number;
+
     @ForeignKey(() => Hotel)
     @Column({ type: DataType.INTEGER })
     hotelId!: number;

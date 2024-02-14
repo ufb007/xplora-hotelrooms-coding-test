@@ -1,2 +1,46 @@
 scalar DateTime
 
+type User {
+    id: Int!
+    email: String!
+    firstName: String!
+    lastName: String!
+    createdAt: DateTime!
+    bookings: [Booking]
+}
+
+type Hotel {
+    id: Int!
+    name: String!
+    location: String!
+    rooms: [Room]
+}
+
+type Room {
+    id: Int!
+    hotel: Hotel,
+    hotelID: Int!
+    images: [Image]
+    singleBed: Int!
+    doubleBed: Int!
+    wifi: Int!
+    tv: Int!
+}
+
+type Image {
+    src: String!
+}
+
+type Booking {
+    user: User!
+    startDate: DateTime!
+    endDate: DateTime!
+    room: Room! 
+}
+
+type Query {
+    users: [User]
+    hotels: [Hotel]
+    getHotelById(id: Int!): Hotel!
+    getUserByEmail(email: String!): User!
+}

@@ -1,2 +1,2 @@
-import User from "src/models/User.model";
+import User from "../models/User.model";
 

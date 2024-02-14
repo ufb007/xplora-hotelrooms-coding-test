@@ -1,4 +1,5 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
+import Booking from './Booking.model';
 
 @Table({ tableName: 'users' })
 class User extends Model {
@@ -10,6 +11,9 @@ class User extends Model {
 
     @Column({ type: DataType.STRING })
     lastName?: string;
+
+    @HasMany(() => Booking)
+    bookings!: Booking[]
 }
 
 export default User;
