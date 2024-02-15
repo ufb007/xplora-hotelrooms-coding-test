@@ -3,19 +3,15 @@ export interface HotelInterface {
     name: string;
     location: string;
     createdAt: Date;
-    rooms?: RoomType[];
+    rooms?: RoomInterface[];
 }
 
-export type RoomType = {
-    id: number,
+export interface RoomInterface {
+    id: number;
     title: string;
     image: string;
-    singleBed: number,
-    doubleBed: number,
-    wifi: number,
-    tv: number
-}
-
-export type ImageType = {
-    src: string
+    singleBed: number;
+    doubleBed: number;
+    wifi: number;
+    tv: number;
 }

@@ -11,7 +11,7 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <Header />
-        <div className='flex justify-center fixed w-full'>
+        <div className='flex justify-center w-full'>
           <main>
             <Routes>
               <Route path='/' element={<Home />} />
