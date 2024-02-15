@@ -8,11 +8,12 @@ export interface HotelInterface {
 
 export type RoomType = {
     id: number,
+    title: string;
+    image: string;
     singleBed: number,
     doubleBed: number,
     wifi: number,
-    tv: number,
-    images: ImageType[]
+    tv: number
 }
 
 export type ImageType = {

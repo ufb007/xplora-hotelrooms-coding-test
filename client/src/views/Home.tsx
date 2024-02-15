@@ -11,9 +11,6 @@ const getHotels = gql`{
         rooms {
             singleBed
             doubleBed
-            images {
-                src
-            }
         }
     }
 }`;

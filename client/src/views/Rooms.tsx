@@ -9,13 +9,12 @@ const getHotelById = gql`
             id
             rooms {
                 id
+                title
+                image
                 singleBed
                 doubleBed
                 wifi
                 tv
-                images {
-                    src
-                }
             }
         }
     }

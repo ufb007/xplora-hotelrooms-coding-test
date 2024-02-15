@@ -7,6 +7,7 @@ module.exports = {
       {
         hotelId: 1,
         title: 'Suite 1',
+        image: '/files/images/rooms/0fe7e400.png',
         singleBed: 0,
         doubleBed: 1,
         wifi: '1',
@@ -15,6 +16,7 @@ module.exports = {
       {
         hotelId: 1,
         title: 'Suite 2',
+        image: '/files/images/rooms/0fe7e400.png',
         singleBed: 2,
         doubleBed: 0,
         wifi: '1',
@@ -23,6 +25,7 @@ module.exports = {
       {
         hotelId: 1,
         title: 'Suite 3',
+        image: '/files/images/rooms/0fe7e400.png',
         singleBed: 1,
         doubleBed: 0,
         wifi: '1',
@@ -31,6 +34,7 @@ module.exports = {
       {
         hotelId: 1,
         title: 'Suite 4',
+        image: '/files/images/rooms/0fe7e400.png',
         singleBed: 1,
         doubleBed: 1,
         wifi: '1',

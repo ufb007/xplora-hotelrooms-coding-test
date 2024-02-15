@@ -7,7 +7,6 @@ import { Sequelize } from 'sequelize-typescript';
 import User from './models/User.model';
 import Hotel from './models/Hotel.model';
 import Room from './models/Room.model';
-import Image from './models/Image.model';
 import Booking from './models/Booking.model';
 import UserResolver from './resolvers/User.resolver';
 import HotelResolver from './resolvers/Hotel.resolver';
@@ -17,7 +16,7 @@ const schema = buildSchema(schemaFile);
 
 const sequelize = new Sequelize('mysql://xplora:xplora@localhost:3306/hotelrooms');
 
-sequelize.addModels([User, Hotel, Room, Image, Booking]);
+sequelize.addModels([User, Hotel, Room, Booking]);
 
 const resolvers = Object.assign(
     {},

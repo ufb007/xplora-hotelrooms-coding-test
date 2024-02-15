@@ -1,6 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import Hotel from './Hotel.model';
-import Image from './Image.model';
 import Booking from './Booking.model';
 
 @Table({ tableName: 'rooms', timestamps: false })
@@ -11,6 +10,9 @@ class Room extends Model {
 
     @Column({ type: DataType.STRING })
     title!: string;
+
+    @Column({ type: DataType.STRING })
+    image!: string;
 
     @Column({ type: DataType.INTEGER, defaultValue: 0 })
     singleBed!: number;
@@ -26,9 +28,6 @@ class Room extends Model {
     
     @BelongsTo(() => Hotel)
     hotel!: Hotel;
-
-    @HasMany(() => Image)
-    images!: Image[];
 
     @HasMany(() => Booking)
     bookings!: Booking[];

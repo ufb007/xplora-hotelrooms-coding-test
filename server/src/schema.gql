@@ -21,16 +21,12 @@ type Room {
     hotel: Hotel,
     hotelID: Int!
     title: String!
-    images: [Image]
+    image: String!
     singleBed: Int!
     doubleBed: Int!
     wifi: Int!
     tv: Int!
     bookings: [Booking]
-}
-
-type Image {
-    src: String!
 }
 
 type Booking {
@@ -44,7 +40,7 @@ type Booking {
 type Query {
     users: [User]
     hotels: [Hotel]
-    getHotelById(id: Int!): Hotel!
+    getHotelById(id: Int!, startDate: DateTime, endDate: DateTime): Hotel!
     getUserByEmail(email: String!): User!
 }
 

@@ -1,8 +1,7 @@
 import Room from "../models/Room.model";
 import Hotel from "../models/Hotel.model";
-import Image from "../models/Image.model";
 import Booking from "../models/Booking.model";
-import { CreateBookingInterface } from "../dtos/Hotel.dto";
+import { CreateBookingInterface, GetHotelBookingsDTO } from "../dtos/Hotel.dto";
 import { Op } from 'sequelize';
 
 class HotelService {
@@ -11,24 +10,44 @@ class HotelService {
             include: {
                 model: Room,
                 include: [
-                    {model: Image},
                     {model: Booking}
                 ]
             }
         });
     }
 
-    public async getHotelById(id: number): Promise<Hotel | null> {
+    public async getHotelById(args: GetHotelBookingsDTO): Promise<Hotel | null> {
+        const { id, startDate, endDate } = args;
+        const excludedRoomIds: number[] = [];
+
+        if (startDate && endDate) {
+            const where = {
+                hotelId: id,
+                startDate: { [Op.between]: [new Date(startDate), new Date(endDate)] }
+            }
+
+            const bookings = await Booking.findAll({ where });
+
+            bookings.forEach(booking => {
+                excludedRoomIds.push(booking.roomId)
+            });
+        }
+
+        console.log(excludedRoomIds)
+
         const hotel = await Hotel.findByPk(id, {
             include: {
                 model: Room,
+                where: {
+                    id: {
+                        [Op.notIn]: excludedRoomIds
+                    }
+                },
                 include: [
-                    {model: Image},
                     {
                         model: Booking,
-                        where: {
-                            endDate: { [Op.gt]: new Date() }
-                        }
+                        where: { endDate: { [Op.gt]: new Date() } },
+                        required: false
                     }
                 ]
             }

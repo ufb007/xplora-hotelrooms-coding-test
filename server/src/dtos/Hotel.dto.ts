@@ -8,6 +8,20 @@ export interface CreateBookingInterface {
     endDate: Date;
 }
 
+export class GetHotelBookingsDTO {
+    @IsNotEmpty()
+    @IsNumber()
+    id!: number;
+
+    @IsOptional()
+    @IsDateString()
+    startDate?: Date;
+
+    @IsOptional()
+    @IsDateString()
+    endDate?: Date;
+}
+
 export class CreateBookingDTO {
     @IsNotEmpty()
     @IsNumber()
