@@ -20,6 +20,7 @@ type Room {
     id: Int!
     hotel: Hotel,
     hotelID: Int!
+    title: String!
     images: [Image]
     singleBed: Int!
     doubleBed: Int!
@@ -45,4 +46,28 @@ type Query {
     hotels: [Hotel]
     getHotelById(id: Int!): Hotel!
     getUserByEmail(email: String!): User!
+}
+
+type createBooking {
+    userId: Int!
+    hotelId: Int!
+    roomId: Int!
+    startDate: DateTime!
+    endDate: DateTime!
+}
+
+type Mutation {
+    createUser (
+        email: String!
+        firstName: String!
+        lastName: String!
+    ): User!
+
+    createBooking (
+        userId: Int!
+        hotelId: Int!
+        roomId: Int!
+        startDate: DateTime!
+        endDate: DateTime!
+    ): createBooking!
 }

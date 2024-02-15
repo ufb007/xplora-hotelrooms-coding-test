@@ -9,6 +9,9 @@ class Room extends Model {
     @Column({ type: DataType.INTEGER })
     hotelId!: number;
 
+    @Column({ type: DataType.STRING })
+    title!: string;
+
     @Column({ type: DataType.INTEGER, defaultValue: 0 })
     singleBed!: number;
 

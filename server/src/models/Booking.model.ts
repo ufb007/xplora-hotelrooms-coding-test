@@ -3,7 +3,10 @@ import Hotel from './Hotel.model';
 import Room from './Room.model';
 import User from './User.model';
 
-@Table({ tableName: 'bookings' })
+@Table({ 
+    tableName: 'bookings',
+    timestamps: true
+})
 class Booking extends Model {
     @ForeignKey(() => User)
     @Column({ type: DataType.INTEGER })

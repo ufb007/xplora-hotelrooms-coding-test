@@ -1,7 +1,10 @@
 import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
 import Booking from './Booking.model';
 
-@Table({ tableName: 'users' })
+@Table({ 
+    tableName: 'users',
+    timestamps: true
+})
 class User extends Model {
     @Column({ type: DataType.STRING, unique: true, allowNull: false })
     email!: string;

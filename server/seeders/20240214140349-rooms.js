@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('rooms', [
       {
         hotelId: 1,
+        title: 'Suite 1',
         singleBed: 0,
         doubleBed: 1,
         wifi: '1',
@@ -13,6 +14,7 @@ module.exports = {
       },
       {
         hotelId: 1,
+        title: 'Suite 2',
         singleBed: 2,
         doubleBed: 0,
         wifi: '1',
@@ -20,6 +22,7 @@ module.exports = {
       },
       {
         hotelId: 1,
+        title: 'Suite 3',
         singleBed: 1,
         doubleBed: 0,
         wifi: '1',
@@ -27,6 +30,7 @@ module.exports = {
       },
       {
         hotelId: 1,
+        title: 'Suite 4',
         singleBed: 1,
         doubleBed: 1,
         wifi: '1',

@@ -18,6 +18,9 @@ module.exports = {
           key: 'id'
         }
       },
+      title: {
+        type: Sequelize.STRING
+      },
       singleBed: {
         type: Sequelize.INTEGER
       },
