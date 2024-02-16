@@ -23,7 +23,8 @@ class HotelService {
         if (startDate && endDate) {
             const where = {
                 hotelId: id,
-                startDate: { [Op.between]: [new Date(startDate), new Date(endDate)] }
+                startDate: { [Op.lte]: new Date(startDate) },
+                endDate: { [Op.gte]: new Date(endDate) }
             }
 
             const bookings = await Booking.findAll({ where });
@@ -32,8 +33,6 @@ class HotelService {
                 excludedRoomIds.push(booking.roomId)
             });
         }
-
-        console.log(excludedRoomIds)
 
         const hotel = await Hotel.findByPk(id, {
             include: {
